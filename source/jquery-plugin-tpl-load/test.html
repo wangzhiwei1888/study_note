@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>解决写插件时候模板渲染问题，可以吧underscore 模板文件 拿出去 然后用 jquery load 进来 然后再调用模板渲染</title>
+	<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://cdn.bootcss.com/underscore.js/1.7.0/underscore.js"></script>
+</head>
+<body>
+	
+	<div id="feeds">
+		
+
+	</div>	
+
+	<script type="text/javascript">
+
+	$("#feeds").load("load.html", function(){
+
+		var tpl = $("#tpl").html();
+
+		var template = _.template(tpl);
+		var html = template({name: "Mustache"});
+
+		$("body").append(html);
+
+	});
+	
+
+	</script>
+
+</body>
+</html>

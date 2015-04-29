@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style type="text/css">
+	
+	.box{ font-size: 18px; line-height: 32px;  width: 200px; height: 200px; background: red; padding: 10px; margin-top: 20px;}
+	.box1{ width: 300px; height: 30px; font-size: 18px; line-height: 30px;  background: yellow;padding: 10px; margin-top: 20px;}
+	</style>
+</head>
+<body>
+
+	<div class="box">
+		测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据
+	</div>
+
+	<div class="box">
+		测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据
+	</div>
+
+	<div class="box">
+		测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据
+	</div>
+
+	<div class="box">
+		测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据
+	</div>
+
+	<div class="box1">测试数据测试数据测试数据测试数据测试数据</div>
+
+	<script type="text/javascript" src="http://www.jason.com:8080/p2pweb/static/js/jquery-1.8.2.min.js?ver=0b6ecf17e3"></script>
+	<script type="text/javascript">
+
+		$('.box').each(function(){
+
+			var size = $(this).css('font-size');
+			var lineHeight = $(this).css('line-height');
+			var width = $(this).css('width');
+			var height = $(this).css('height');
+
+			console.log(size)
+			console.log(lineHeight)
+			console.log(width)
+			console.log(height)
+
+			var count = 0;
+
+			var countLine = Math.floor(parseInt(width)/parseInt(size));
+			var countrow = Math.floor(parseInt(height)/parseInt(lineHeight));
+
+			console.log(countLine)
+			console.log(countrow)
+
+			count = countrow*countLine;
+
+			console.log(count)
+
+			var boxhtml = $(this).html();
+
+			var subStr = boxhtml.substring(0,count)
+
+			$(this).attr('title',boxhtml);
+			$(this).html(subStr+'...')
+
+		})
+
+		$.fn.substringFn = function(options){
+
+			var defaults = {};
+			var msPick = $.extend(defaults, options);
+
+			this.each(function(){
+
+				var size = $(this).css('font-size');
+				var lineHeight = $(this).css('line-height');
+				var width = $(this).css('width');
+				var height = $(this).css('height');
+
+				var count = 0;
+				var countLine = Math.floor(parseInt(width)/parseInt(size));
+				var countrow = Math.floor(parseInt(height)/parseInt(lineHeight));
+
+				console.log(countrow)
+				console.log(countLine)
+				count = countrow*countLine -2;
+
+				var boxhtml = $(this).html();
+
+				var subStr = boxhtml.substring(0,count)
+
+				$(this).attr('title',boxhtml);
+				$(this).html(subStr+'...')
+
+			})
+
+			return this;
+		}
+
+		$('.box').substringFn();
+		$('.box1').substringFn();
+
+
+	</script>
+</body>
+</html>

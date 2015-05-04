@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style type="text/css">
+	body{ background: red;}
+
+	
+	.arrow_box_bottom {
+		position: absolute;
+		background: #ffffff;
+		border: 1px solid #020f04;
+		padding: 6px 10px;
+	}
+	.arrow_box_bottom:after, .arrow_box_bottom:before {
+		bottom: 100%;
+		left: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+	}
+	
+	.arrow_box_bottom:after {
+		border-color: rgba(255, 255, 255, 0);
+		border-bottom-color: #ffffff;
+		border-width: 5px;
+		margin-left: -5px;
+	}
+	.arrow_box_bottom:before {
+		border-color: rgba(2, 15, 4, 0);
+		border-bottom-color: #020f04;
+		border-width: 6px;
+		margin-left: -6px;
+	}
+	
+	.arrow_box_top {
+		position: absolute;
+		background: #ffffff;
+		border: 1px solid #020f04;
+		padding: 6px 10px;
+	}
+	.arrow_box_top:after, .arrow_box_top:before {
+		top: 100%;
+		left: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+	}
+	
+	.arrow_box_top:after {
+		border-color: rgba(255, 255, 255, 0);
+		border-top-color: #ffffff;
+		border-width: 5px;
+		margin-left: -5px;
+	}
+	.arrow_box_top:before {
+		border-color: rgba(2, 15, 4, 0);
+		border-top-color: #020f04;
+		border-width: 6px;
+		margin-left: -6px;
+	}
+	
+		
+	.arrow_box_left {
+		position: absolute;
+		background: #ffffff;
+		border: 1px solid #020f04;
+		padding: 6px 10px;
+	}
+	.arrow_box_left:after, .arrow_box_left:before {
+		top: 50%;
+		left: 100%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+	}
+	
+	.arrow_box_left:after {
+		border-color: rgba(255, 255, 255, 0);
+		border-left-color: #ffffff;
+		border-width: 5px;
+		margin-top: -5px;
+	}
+	.arrow_box_left:before {
+		border-color: rgba(2, 15, 4, 0);
+		border-left-color: #020f04;
+		border-width: 6px;
+		margin-top: -6px;
+	}
+	 
+	
+	.arrow_box_right {
+		position: absolute;
+		background: #ffffff;
+		border: 1px solid #020f04;
+		padding: 6px 10px;
+	}
+	.arrow_box_right:after, .arrow_box_right:before {
+		top: 50%;
+		right: 100%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+	}
+	
+	.arrow_box_right:after {
+		border-color: rgba(255, 255, 255, 0);
+		border-right-color: #ffffff;
+		border-width: 5px;
+		margin-top: -5px;
+	}
+	.arrow_box_right:before {
+		border-color: rgba(2, 15, 4, 0);
+		border-right-color: #020f04;
+		border-width: 6px;
+		margin-top: -6px;
+	}
+	
+
+
+	</style>
+
+
+</head>
+<body>
+	
+
+	<div class="arrow_box_left">sdf</div>
+	<div class="arrow_box_right">sdf</div>
+	<div class="arrow_box_top">sdf</div>
+	<div class="arrow_box_bottom">sdf</div>
+
+
+
+</body>
+</html>

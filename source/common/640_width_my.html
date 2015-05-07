@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+	<style type="text/css">
+	
+	body{ padding: 0px; margin: 0px; width: 640px; background: #dfdfdf;margin: 0 auto;}
+	.header{ height: 100px; line-height: 100px; background: #ccc; font-size: 28px; text-align: center;}
+	</style>
+
+	<meta name="viewport" content="target-densitydpi=device-dpi,width=640">
+    <meta name="apple-itunes-app" content="app-id=425349261"/>
+    <meta name="format-detection" content="telephone=no" />
+
+
+    <script>
+
+    /* Fix viewport*/
+    (function(window,document) {
+    	
+    	
+	    var userAgent = navigator.userAgent,
+	    
+	    width = 640,
+		
+		e = window.innerWidth || width,
+	    q = window.screen.width || e,
+	    d = window.screen.availWidth || e,
+	    
+	    minWidth = Math.min(e, q, d),
+
+	    scale = minWidth / width,
+	    b = window.devicePixelRatio;//此值一般都是大于1的，所以意义不大。
+	    
+	    console.log(scale,b);
+
+	    scale = Math.min(scale, b);
+
+	    if (scale < 1) {
+
+	        var t = ",initial-scale=" + scale + ",maximum-scale=" + scale,
+	        allMeta = document.getElementsByTagName("meta"),
+	        j;
+	        if (/iphone|ipod/ig.test(userAgent)) {
+	            j = ",user-scalable=no"
+	        }
+	        if (/android/ig.test(userAgent)) {
+	            j = ""
+	        }
+	        t += j || "";
+
+	        console.log(t);
+	        if (/zenlife-android-webview/.test(userAgent) && !/viewport/.test(userAgent)) {
+	            document.querySelector('html').style.zoom = scale
+	        }
+	        //本网页没在iframe里面时
+	        if (top.location != location) {
+	            document.querySelector('html').style.zoom = scale
+	        };
+	        for (var s = 0,m; s < allMeta.length; s++) {
+	            m = allMeta[s];
+	            if (m.name == "viewport") {
+	                m.content += t
+	            }
+	        }
+	    }
+
+	}).call(this, window, document);
+
+
+    </script>
+
+
+</head>
+<body>
+	
+	<div class="header">
+		宜定盈是宜人贷官方近期推出的一站式理财咨询
+	</div>
+</body>
+</html>

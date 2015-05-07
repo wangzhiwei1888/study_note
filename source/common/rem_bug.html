@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	
+	*{margin: 0; padding: 0;}
+	
+	html{ font-size: 625%;}
+
+	.list{
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		background: url('images/icons1.png') blue no-repeat;
+		background-size: cover;
+
+	}
+
+	.ico1{
+		background-position: 0 0;
+	}
+
+	.ico2{
+		background-position: 0 -0.7rem;
+	}
+
+	.ico3{
+		background-position: 0 0;
+	}
+
+
+	</style>
+</head>
+<body>
+	rem bug 设置成 62.5% root 为 10px,但是在chrome下面字体最小是 12px 所以计算的时候要安照 12px 来算
+	为了解决此问题 吧 html{ font-size: 625%;} 设置为 100px ，再根据这个值来计算其他的。
+	
+	root 625% = 100px ;
+	640/28 = 320/x 
+	来计算出x的值 为14px
+	来计算出x的值 为0.14rem
+
+	
+	640/28 = 375/x 
+	来计算出x的值 为16.4px
+	为计算出 0.14rem 要设置 root 值为
+
+
+	<div style="font-size:0.12rem;">sdfjsldjflsdjf</div>
+	<div style="font-size:10px">sdfjsldjflsdjf</div>
+	<div style="font-size:12px">sdfjsldjflsdjf</div>
+	
+	<div class="ico_all">
+		<span class="list ico1"></span>
+		<span class="list ico2"></span>
+		<span class="list ico1"></span>
+	</div>
+
+
+</body>
+</html>

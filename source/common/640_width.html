@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+	<style type="text/css">
+	
+	body{ padding: 0px; margin: 0px; width: 640px; background: #dfdfdf;margin: 0 auto;}
+	.header{ height: 100px; line-height: 100px; background: #ccc; font-size: 28px; text-align: center;}
+	</style>
+
+	<meta name="viewport" content="target-densitydpi=device-dpi,width=640">
+    <meta name="apple-itunes-app" content="app-id=425349261"/>
+    <meta name="format-detection" content="telephone=no" />
+
+
+    <script>
+
+    /* Fix viewport*/
+    (function(window,document) {
+    	
+    	//viewport 定义的width 和根据这个 width 计算的 height
+    	console.log(window.innerWidth);
+    	console.log(window.innerHeight);
+
+    	//设备的显示分辨率宽度
+    	console.log(window.outerWidth);	
+
+	    //返回当前屏幕宽度(空白空间) 
+	    console.log(window.screen.width);
+	    //返回当前屏幕宽度(分辨率值)
+	    console.log(window.screen.availWidth);
+	    
+	    //设备的显示分辨率高度
+	    console.log(window.outerHeight);
+	    //返回当前屏幕高度(空白空间) 
+	    console.log(window.screen.height);
+	    //返回当前屏幕高度(分辨率值)
+	    console.log(window.screen.availHeight);
+
+
+	    var userAgent = navigator.userAgent,
+	    
+	    width = 640,
+		
+		e = window.innerWidth || width,
+	    g = window.outerHeight || e,
+	    q = window.screen.width || e,
+	    d = window.screen.availWidth || e,
+	    n = window.innerHeight || width,
+	    p = window.outerHeight || n,
+	    a = window.screen.height || n,
+	    k = window.screen.availHeight || n,
+	    l = Math.min(e, g, q, d, n, p, a, k),
+
+	    h = l / width,
+	    b = window.devicePixelRatio;
+	    h = Math.min(h, b);
+
+	    if (h < 1) {
+
+	        var t = ",initial-scale=" + h + ",maximum-scale=" + h,
+	        allMeta = document.getElementsByTagName("meta"),
+	        j;
+	        if (/iphone|ipod/ig.test(userAgent)) {
+	            j = ",user-scalable=no"
+	        }
+	        if (/android/ig.test(userAgent)) {
+	            j = ""
+	        }
+	        t += j || "";
+	        if (/zenlife-android-webview/.test(userAgent) && !/viewport/.test(userAgent)) {
+	            document.querySelector('html').style.zoom = h
+	        }
+	        if (top.location != location) {
+	            document.querySelector('html').style.zoom = h
+	        };
+	        for (var s = 0,
+	        m; s < allMeta.length; s++) {
+	            m = allMeta[s];
+	            if (m.name == "viewport") {
+	                m.content += t
+	            }
+	        }
+	    }
+
+	}).call(this, window, document);
+
+
+    </script>
+
+
+</head>
+<body>
+	
+	<div class="header">
+		宜定盈是宜人贷官方近期推出的一站式理财咨询
+	</div>
+</body>
+</html>

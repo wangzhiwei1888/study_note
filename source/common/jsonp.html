@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+
+</head>
+<body>
+	
+	<div id="div1">
+		
+	</div>
+
+<script src="http://cdn.bootcss.com/jquery/1.8.2/jquery.js"></script>
+<script type="text/javascript">
+	
+	var url = 'http://job.tianji.com/career/jobinvite/27145037/info';
+
+	$.ajax({
+		url:url,
+		data:{a:'1',b:'2'},
+		dataType:"jsonp",
+		jsonpCallback:'wzw_fn', //wzw_fn 为更改 callback 的 name 值。
+		cache:false,
+		success:function(data){
+
+			console.log(data.content);
+			$("#div1").html(data.content);
+
+		}
+
+	});
+
+</script>
+
+
+</body>
+</html>
